@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2014 Jin Kwon.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<scxml xmlns="http://www.w3.org/2005/07/scxml"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       name="xlet-state-chart"
+       version="1.0"
+       initial="loaded"
+       datamodel="xpath">
+
+  <state id="loaded">
+    <transition event="init.xlet" target="paused"/>
+    <transition event="destroy.xlet" target="destroyed"/>
+  </state>
+
+  <state id="paused">
+    <transition event="start.xlet" target="active"/>
+    <transition event="destroy.xlet" target="destroyed"/>
+  </state>
+
+  <state id="active">
+    <transition event="pause.xlet" target="paused"/>
+    <transition event="destroy.xlet" target="destroyed"/>
+  </state>
+
+  <state id="destroyed">
+  </state>
+
+</scxml>
+
