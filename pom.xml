@@ -1,4 +1,3 @@
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
@@ -6,76 +5,31 @@
   <!-- The Basics -->
   <groupId>com.github.jinahya</groupId>
   <artifactId>scxml-bind</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>9</version>
+    <groupId>com.github.jinahya</groupId>
+    <artifactId>ossrh-parent</artifactId>
+    <version>0.1.1</version>
   </parent>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>1.1.1</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.inject</groupId>
-        <artifactId>guice</artifactId>
-        <version>4.0-beta4</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-lang3</artifactId>
-        <version>3.3.1</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-all</artifactId>
-        <version>1.9.5</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.6</version>
-      </dependency>
-      <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>6.8.8</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+  <dependencyManagement/>
   <dependencies>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.inject</groupId>
-      <artifactId>guice</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
+      <version>1.1.3</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <scope>compile</scope>
+      <version>1.7.13</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
+      <version>6.9.9</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -92,69 +46,55 @@
   <build>
     <pluginManagement>
       <plugins>
-        <!--
         <plugin>
-          <groupId>com.atlassian.maven.plugins</groupId>
-          <artifactId>maven-jgitflow-plugin</artifactId>
-          <version>1.0-alpha27</version>
-        </plugin>
-        -->
-        <plugin>
-          <groupId>com.github.github</groupId>
-          <artifactId>site-maven-plugin</artifactId>
-          <version>0.9</version>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.8</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.1</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.5</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>2.4</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.9.1</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>2.7</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-release-plugin</artifactId>
-          <!--version>2.3.2</version-->
-          <!--version>2.4.2</version-->
-          <version>2.5</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
           <version>3.3</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>1.6</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.10.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.8.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.4</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.17</version>
+          <version>2.18.1</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>animal-sniffer-maven-plugin</artifactId>
-          <version>1.11</version>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>jaxb2-maven-plugin</artifactId>
-          <version>1.6</version>
+          <version>1.13</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -169,17 +109,10 @@
       </plugins>
     </pluginManagement>
     <plugins>
-      <!--
-      <plugin>
-        <groupId>com.atlassian.maven.plugins</groupId>
-        <artifactId>maven-jgitflow-plugin</artifactId>
-        <configuration>
-        </configuration>
-      </plugin>
-      -->
       <plugin>
         <groupId>com.github.github</groupId>
         <artifactId>site-maven-plugin</artifactId>
+        <version>0.12</version>
         <configuration>
           <server>github</server>
           <message>creating site for ${project.version}</message>
@@ -189,11 +122,30 @@
         <executions>
           <execution>
             <goals>
-              <!--
-                    <goal>site</goal>
-              -->
+              <!--<goal>site</goal>-->
             </goals>
             <phase>site</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>download-xsds</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <!--<goal>run</goal>-->
+            </goals>
+            <configuration>
+              <target>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml.xsd"
+                     dest="${project.basedir}/src/main/xsd/"
+                     verbose="false"
+                     usetimestamp="true"/>
+              </target>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -208,62 +160,27 @@
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
-        <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>check-signature-java15</id>
-            <phase>process-classes</phase> <!-- default -->
-            <goals>
-              <!--
-              <goal>check</goal>
-              -->
-            </goals>
-            <configuration>
-              <signature>
-                <groupId>org.codehaus.mojo.signature</groupId>
-                <artifactId>java16</artifactId>
-                <version>1.1</version>
-              </signature>
-            </configuration>
-          </execution>
-          <execution>
-            <id>check-signature-android-api-signature-10</id>
-            <phase>process-classes</phase> <!-- default -->
-            <goals>
-              <!--
-              <goal>check</goal>
-              -->
-            </goals>
-            <configuration>
-              <signature>
-                <groupId>com.googlecode.jinahya</groupId>
-                <artifactId>android-api-signature-10</artifactId>
-                <version>1.0.2</version>
-              </signature>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>2.2</version>
         <executions>
           <execution>
             <id>xjc</id>
             <goals>
-              <goal>xjc</goal>
+              <!--<goal>xjc</goal>-->
             </goals>
+            <configuration>
+              <extension>true</extension>
+              <sources>
+                <source>src/main/xsd/scxml.xsd</source>
+              </sources>
+              <xjbSources>
+                <xjbSource>src/main/xjb</xjbSource>
+              </xjbSources>
+            </configuration>
           </execution>
         </executions>
-        <configuration>
-          <!--
-          <arguments>-Xsimplify</arguments>
-          -->
-          <extension>true</extension>
-          <schemaFiles>scxml.xsd</schemaFiles>
-        </configuration>
       </plugin>
-      <plugin>
+<!--      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>properties-maven-plugin</artifactId>
         <version>1.0-alpha-2</version>
@@ -283,8 +200,8 @@
             </property>
           </properties>
         </configuration>
-      </plugin>
-      <plugin>
+      </plugin>-->
+<!--      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>xml-maven-plugin</artifactId>
         <executions>
@@ -298,13 +215,32 @@
           <validationSets>
             <validationSet>
               <dir>src/main/xml</dir>
-              <!--
+
               <systemId>src/main/xsd/scxml.xsd</systemId>
               <systemId>src/main/xsd/scxml-module-core.xsd</systemId>
-              -->
+
             </validationSet>
           </validationSets>
         </configuration>
+      </plugin>-->
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>0.12.3</version>
+        <configuration>
+          <schemaDirectory>src/main/xsd</schemaDirectory>
+          <bindingDirectory>src/main/xjb</bindingDirectory>
+          <schemaIncludes>
+            <schemaInclude>scxml.xsd</schemaInclude>
+          </schemaIncludes>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <!--<goal>generate</goal>-->
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
@@ -313,49 +249,41 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>2.4</version>
+        <version>2.5</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.12</version>
+        <version>2.17</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.7</version>
+        <version>2.8.1</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.9.1</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <targetJdk>1.7</targetJdk>
-        </configuration>
+        <version>3.5</version>
       </plugin>
-      <!--
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
-        <version>2.6</version>
+        <version>2.7</version>
       </plugin>
-      -->
-      <!--
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>2.5.3</version>
+        <version>3.0.3</version>
       </plugin>
-      -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.1</version>
+        <version>2.2</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -371,8 +299,8 @@
 
   <!-- More Project Information -->
   <name>${project.artifactId}</name>
-  <url>http://jinahya.github.io/scxml-bind/sites/${project.version}</url>
-  <inceptionYear>2011</inceptionYear>
+  <url>http://jinahya.github.io/${project.artifactId}/sites/${project.version}</url>
+  <inceptionYear>2014</inceptionYear>
   <licenses>
     <license>
       <name>Apache 2</name>
@@ -405,37 +333,10 @@
     <tag>HEAD</tag>
   </scm>
   <prerequisites>
-    <maven>3.1.1</maven>
+    <maven>3.0.1</maven>
   </prerequisites>
   <repositories />
   <pluginRepositories />
   <distributionManagement />
-  <profiles>
-    <profile>
-      <id>release-sign-artifacts</id>
-      <activation>
-        <property>
-          <name>performRelease</name>
-          <value>true</value>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
+  <profiles/>
 </project>
