@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          version="2.1"
+          xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/jaxb/bindingschema_2_0.xsd">
+
+  <bindings schemaLocation="../xsd/scxml-module-core.xsd" node="/xs:schema">
+    <!--    <bindings node="xs:group[@name='scxml.scxml.mix']/xs:choice/xs:group[@ref='scxml.extra.content']">
+      <class name="childrenxx"/>
+    </bindings>-->
+  </bindings>
+</bindings>
