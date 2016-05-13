@@ -13,24 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
 
-
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
-
 
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class Raise implements Executable {
-
+@XmlRootElement
+public class Raise extends Executable {
 
     @XmlAttribute(required = true)
     @XmlSchemaType(name = "NMTOKEN")
     private String event;
-
 }
-

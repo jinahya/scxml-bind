@@ -13,26 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlMixed;
+import javax.xml.bind.annotation.XmlRootElement;
 
-
-public class Script implements Executable {
-
+@XmlRootElement
+public class Script extends Executable {
 
     @XmlAttribute(name = "src")
     protected String src;
-
 
     @XmlMixed
     @XmlAnyElement(lax = true)
     protected List<Object> content;
 
 }
-

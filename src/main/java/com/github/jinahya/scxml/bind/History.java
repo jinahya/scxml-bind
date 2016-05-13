@@ -13,40 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-
 public class History {
 
+    @XmlEnum
+    public static enum Type {
 
-    public static enum HistoryType {
-
-        deep,
-        shallow
+        @XmlEnumValue("deep")
+        DEEP,
+        @XmlEnumValue("shallow")
+        SHALLOW
 
     }
-
 
     @XmlAttribute
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "ID")
     protected String id;
 
-
     @XmlAttribute
-    protected HistoryType type = HistoryType.shallow;
-
+    protected Type type = Type.SHALLOW;
 
     @XmlElement(required = true)
     private Transition transition;
 
 }
-

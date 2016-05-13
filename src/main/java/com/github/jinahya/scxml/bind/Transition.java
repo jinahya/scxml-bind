@@ -13,19 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
 
-
 import java.util.List;
+import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlList;
 import javax.xml.bind.annotation.XmlSchemaType;
-
 
 /**
  *
@@ -33,23 +32,21 @@ import javax.xml.bind.annotation.XmlSchemaType;
  */
 public class Transition {
 
-
     @XmlEnum
     public static enum TransitionType {
 
-        internal,
-        external
-
+        @XmlEnumValue("internal")
+        INTERNAL,
+        @XmlEnumValue("external")
+        EXTERNAL
     }
 
+    @XmlAttribute
+    @XmlList
+    private List<String> event;
 
     @XmlAttribute
-    private String event;
-
-
-    @XmlAttribute
-    private String cond = "true";
-
+    private String cond = Boolean.TRUE.toString();
 
     @XmlAttribute
     @XmlIDREF
@@ -57,22 +54,20 @@ public class Transition {
     @XmlSchemaType(name = "IDREFS")
     protected List<Object> target;
 
-
     @XmlAttribute
-    private TransitionType type = TransitionType.external;
+    private TransitionType type = TransitionType.EXTERNAL;
 
-
-    @XmlElements({
-        @XmlElement(name = "assign", namespace = XmlConstants.SCXML_NS_URI, type = Assign.class, required = false),
-        @XmlElement(name = "cancel", namespace = XmlConstants.SCXML_NS_URI, type = Cancel.class, required = false),
-        @XmlElement(name = "if", namespace = XmlConstants.SCXML_NS_URI, type = If.class, required = false),
-        @XmlElement(name = "foreach", namespace = XmlConstants.SCXML_NS_URI, type = Foreach.class, required = false),
-        @XmlElement(name = "log", namespace = XmlConstants.SCXML_NS_URI, type = Log.class, required = false),
-        @XmlElement(name = "raise", namespace = XmlConstants.SCXML_NS_URI, type = Raise.class, required = false),
-        @XmlElement(name = "script", namespace = XmlConstants.SCXML_NS_URI, type = Script.class, required = false),
-        @XmlElement(name = "send", namespace = XmlConstants.SCXML_NS_URI, type = Send.class, required = false)
+    @XmlElementRefs({
+        @XmlElementRef(name = "assign", namespace = XmlConstants.SCXML_NS_URI, type = Assign.class),
+        @XmlElementRef(name = "cancel", namespace = XmlConstants.SCXML_NS_URI, type = Cancel.class, required = false),
+        @XmlElementRef(name = "if", namespace = XmlConstants.SCXML_NS_URI, type = If.class, required = false),
+        @XmlElementRef(name = "foreach", namespace = XmlConstants.SCXML_NS_URI, type = Foreach.class, required = false),
+        @XmlElementRef(name = "log", namespace = XmlConstants.SCXML_NS_URI, type = Log.class, required = false),
+        @XmlElementRef(name = "raise", namespace = XmlConstants.SCXML_NS_URI, type = Raise.class, required = false),
+        @XmlElementRef(name = "script", namespace = XmlConstants.SCXML_NS_URI, type = Script.class, required = false),
+        @XmlElementRef(name = "send", namespace = XmlConstants.SCXML_NS_URI, type = Send.class, required = false)
     })
+    @XmlAnyElement(lax = true)
     protected List<Object> executables;
 
 }
-

@@ -13,35 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
 
-
 import java.util.List;
-import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
-
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class Foreach implements Executable {
-
+@XmlRootElement
+public class Foreach extends Executable {
 
     @XmlAttribute(required = true)
     private String array;
 
-
     @XmlAttribute(required = true)
     private String item;
 
-
     @XmlAttribute(required = true)
     private String index;
-
 
     @XmlElements({
         @XmlElement(name = "assign", namespace = "http://www.w3.org/2005/07/scxml", type = Assign.class, required = false),
@@ -56,4 +50,3 @@ public class Foreach implements Executable {
     private List<Executable> executables;
 
 }
-

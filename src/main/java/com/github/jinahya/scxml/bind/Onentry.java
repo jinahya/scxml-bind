@@ -13,22 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 
-
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 public class Onentry {
-
 
     public List<Executable> getExecutables() {
 
@@ -38,7 +34,6 @@ public class Onentry {
 
         return executables;
     }
-
 
     @XmlElements({
         @XmlElement(name = "log", namespace = XmlConstants.SCXML_NS_URI, type = Log.class, required = false),
@@ -53,4 +48,3 @@ public class Onentry {
     protected List<Executable> executables;
 
 }
-

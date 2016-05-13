@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAnyElement;
@@ -26,9 +24,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-
 public class Data {
-
 
     @XmlAttribute(required = true)
     @XmlID
@@ -36,18 +32,13 @@ public class Data {
     @XmlSchemaType(name = "ID")
     protected String id;
 
-
     @XmlAttribute(name = "src")
     protected String src;
-
 
     @XmlMixed
     @XmlAnyElement(lax = true)
     protected List<Object> content;
 
-
     @XmlAttribute(name = "expr")
     protected String expr;
-
 }
-

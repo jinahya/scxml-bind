@@ -13,19 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
 
-
+import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 
-
 public class Datamodel {
 
+    public List<Data> getData() {
+        if (data == null) {
+            data = new ArrayList<Data>();
+        }
+        return data;
+    }
+
+    public void setData(List<Data> data) {
+        this.data = data;
+    }
 
     @XmlElement
     protected List<Data> data;
-
 }
-

@@ -13,23 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 
-
 public class Donedata {
-
 
     @XmlElement
     protected Content content;
-
 
     @XmlElement(name = "param")
     protected List<Param> params;
 
 }
-

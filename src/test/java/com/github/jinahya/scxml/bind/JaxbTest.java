@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.io.File;
 import java.io.IOException;
@@ -26,25 +24,23 @@ import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
 import org.testng.annotations.Test;
 
-
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 public class JaxbTest {
 
-
-    @Test
+    @Test(enabled = false)
     public void generateSchema() throws JAXBException, IOException {
 
         final JAXBContext context
-            = JAXBContext.newInstance("com.github.jinahya.scxml.bind");
+                = JAXBContext.newInstance("com.github.jinahya.scxml.bind");
         context.generateSchema(new SchemaOutputResolver() {
 
             @Override
             public Result createOutput(final String namespaceUri,
                                        final String suggestedFileName)
-                throws IOException {
+                    throws IOException {
 
                 final File file = new File("target", "schema.xsd");
                 return new StreamResult(file);
@@ -54,4 +50,3 @@ public class JaxbTest {
     }
 
 }
-

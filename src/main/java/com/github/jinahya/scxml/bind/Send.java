@@ -13,47 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-
-public class Send implements Executable {
-
+@XmlRootElement
+public class Send extends Executable {
 
     @XmlAttribute
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String event;
 
-
     @XmlAttribute
     protected String eventexpr;
-
 
     @XmlAttribute
     protected String target;
 
-
     @XmlAttribute
     protected String targetexpr;
-
 
     @XmlAttribute
     protected String type;
 
-
     @XmlAttribute
     protected String typeexpr;
-
 
     @XmlAttribute
     @XmlID
@@ -61,30 +53,23 @@ public class Send implements Executable {
     @XmlSchemaType(name = "ID")
     protected String id;
 
-
     @XmlAttribute
     protected String idlocation;
-
 
     @XmlAttribute
     protected String delay;
 
-
     @XmlAttribute
     protected String delayexpr;
-
 
     @XmlAttribute
     @XmlList
     protected List<String> namelist;
 
-
     @XmlElement(name = "param")
     private List<Param> params;
-
 
     @XmlElement
     private Content content;
 
 }
-

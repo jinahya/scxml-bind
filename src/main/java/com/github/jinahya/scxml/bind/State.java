@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlList;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
 
 /**
  *
@@ -33,54 +31,45 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 public class State {
 
-
     @XmlAttribute(name = "id")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
 
-
-    @XmlAttribute
+    @XmlAttribute(name = "initial")
+    @XmlIDREF
     @XmlList
     @XmlSchemaType(name = "IDREFS")
-    protected List<String> initial;
-
-
-    @XmlElement
-    private Onentry onentry;
-
+    protected List<State> initial_;
 
     @XmlElement
-    private Onexit onexit;
+    private List<Onentry> onentry;
 
+    @XmlElement
+    private List<Onexit> onexit;
 
-    @XmlElement(name = "transition")
-    private List<Transition> transitions;
+    @XmlElement
+    private List<Transition> transition;
 
+    @XmlElement
+    private Initial initial;
 
-    @XmlElement(name = "initial")
-    private List<Initial> initials;
+    @XmlElement
+    private List<State> state;
 
-
-    @XmlElement(name = "state")
-    private List<State> states;
-
-
-    @XmlElement(name = "parallel")
-    private List<State> parallels;
-
+    @XmlElement
+    private List<State> parallel;
 
     @XmlElement(name = "final")
-    private List<Final> finals;
+    private List<Final> final_;
 
-
-    @XmlElement(name = "history")
-    private List<History> histories;
-
+    @XmlElement
+    private List<History> history;
 
     @XmlElement
     private Datamodel datamode;
 
+    @XmlElement
+    private List<Invoke> invoke;
 }
-

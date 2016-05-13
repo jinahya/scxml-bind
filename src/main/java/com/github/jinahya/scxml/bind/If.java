@@ -13,34 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
-
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class If implements Executable {
-
+@XmlRootElement
+public class If extends Executable {
 
     @XmlAttribute(required = true)
     private String cond;
 
-
     @XmlElement(name = "elseif")
     private List<Elseif> elseifs;
 
-
     @XmlElement(name = "else")
     private Else else_;
-
 
 //    @XmlElementRefs({
 //        @XmlElementRef(name = "assign", namespace = XmlConstants.SCXML_NS_URI, type = Assign.class, required = false),
@@ -67,4 +62,3 @@ public class If implements Executable {
     private List<Executable> elements;
 
 }
-

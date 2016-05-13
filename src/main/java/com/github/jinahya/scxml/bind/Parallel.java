@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -25,9 +23,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-
 public class Parallel {
-
 
     @XmlAttribute
     @XmlID
@@ -35,37 +31,27 @@ public class Parallel {
     @XmlSchemaType(name = "ID")
     protected String id;
 
+    @XmlElement
+    private List<Onentry> onentry;
 
-    @XmlElement(name = "onentry")
-    private List<Onentry> onentries;
+    @XmlElement
+    private List<Onexit> onexit;
 
+    @XmlElement
+    private List<Transition> transition;
 
-    @XmlElement(name = "onexit")
-    private List<Onexit> onexits;
+    @XmlElement
+    private List<State> state;
 
+    @XmlElement
+    private List<Parallel> parallel;
 
-    @XmlElement(name = "transition")
-    private List<Transition> transitions;
-
-
-    @XmlElement(name = "state")
-    private List<State> states;
-
-
-    @XmlElement(name = "parallel")
-    private List<Parallel> parallels;
-
-
-    @XmlElement(name = "history")
-    private List<History> histories;
-
+    @XmlElement
+    private List<History> history;
 
     @XmlElement
     private Datamodel datamodel;
 
-
-    @XmlElement(name = "invoke")
-    private List<Invoke> invokes;
-
+    @XmlElement
+    private List<Invoke> invoke;
 }
-

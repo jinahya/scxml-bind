@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -29,7 +27,6 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
@@ -37,48 +34,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement
 public class Scxml {
 
-
     @XmlEnum
-    public static enum ScxmlBinding {
-
+    public static enum Binding {
         early,
         late;
-
     }
 
-
     @XmlAttribute
+    @XmlIDREF
     @XmlList
     @XmlSchemaType(name = "IDREFS")
-    protected List<String> initial;
-
+    protected List<State> initial;
 
     @XmlAttribute(name = "name")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NMTOKEN")
     private String name;
 
-
     @XmlAttribute(required = true)
     private final BigDecimal version = BigDecimal.valueOf(1.0d);
-
 
     @XmlAttribute(name = "name")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NMTOKEN")
-    private String datamodel;
-
+    private String model;
 
     @XmlAttribute
-    private ScxmlBinding binding = ScxmlBinding.early;
-
+    private Binding binding = Binding.early;
 
     @XmlElement(name = "state")
     private List<State> states;
 
-
     @XmlElement(name = "parallel")
     private List<Parallel> parallels;
 
-}
+    @XmlElement(name = "final")
+    private List<Final> finals;
 
+    @XmlElement
+    private Datamodel datamodel;
+
+    @XmlElement
+    private Script script;
+}

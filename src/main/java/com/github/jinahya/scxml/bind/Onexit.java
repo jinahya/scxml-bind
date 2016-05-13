@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +22,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlRootElement;
 
-
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 @XmlRootElement
-public class Onexit implements Executable {
-
+public class Onexit extends Executable {
 
     public List<Executable> getExecutables() {
 
@@ -41,7 +37,6 @@ public class Onexit implements Executable {
 
         return executables;
     }
-
 
 //    @XmlElementRefs({
 //        @XmlElementRef(name = "log", namespace = XmlConstants.SCXML_NS_URI, type = Log.class, required = false),
@@ -66,4 +61,3 @@ public class Onexit implements Executable {
     protected List<Executable> executables;
 
 }
-

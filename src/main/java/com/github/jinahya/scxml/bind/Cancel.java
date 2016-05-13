@@ -13,24 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
 
-
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 
-
-public class Cancel implements Executable {
-
+@XmlRootElement
+public class Cancel extends Executable {
 
     @XmlAttribute
     @XmlSchemaType(name = "IDREF")
     private String sendid;
 
-
     @XmlAttribute
     private String sendidexpr;
 
 }
-

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -26,25 +24,19 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-
 public class Invoke {
-
 
     @XmlAttribute
     protected String type;
 
-
     @XmlAttribute
     protected String typeexpr;
-
 
     @XmlAttribute
     protected String src;
 
-
     @XmlAttribute
     protected String srcexpr;
-
 
     @XmlAttribute
     @XmlID
@@ -52,30 +44,23 @@ public class Invoke {
     @XmlSchemaType(name = "ID")
     protected String id;
 
-
     @XmlAttribute
     protected String idlocation;
-
 
     @XmlAttribute
     @XmlList
     protected List<String> namelist;
 
-
     @XmlAttribute
     protected boolean autoforward;
-
 
     @XmlElement(name = "param")
     private List<Param> params;
 
-
     @XmlElement
     private Finalize finalize;
-
 
     @XmlElement
     private Content content;
 
 }
-

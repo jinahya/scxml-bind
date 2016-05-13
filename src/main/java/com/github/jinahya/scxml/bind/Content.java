@@ -13,26 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.jinahya.scxml.bind;
-
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlMixed;
 
-
 public class Content {
-
 
     @XmlAttribute
     protected String expr;
-
 
     @XmlAnyElement(lax = true)
     @XmlMixed
     protected List<Object> content;
 
 }
-
