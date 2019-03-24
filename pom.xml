@@ -206,80 +206,10 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jaxb2-maven-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-          <execution>
-            <id>xjc</id>
-            <goals>
-              <!--<goal>xjc</goal>-->
-            </goals>
-            <configuration>
-              <extension>true</extension>
-              <sources>
-                <source>src/main/xsd/scxml.xsd</source>
-              </sources>
-              <xjbSources>
-                <xjbSource>src/main/xjb</xjbSource>
-              </xjbSources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <!--      <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>properties-maven-plugin</artifactId>
-              <version>1.0-alpha-2</version>
-              <executions>
-                <execution>
-                  <id>set-additional-system-properties</id>
-                  <goals>
-                    <goal>set-system-properties</goal>
-                  </goals>
-                </execution>
-              </executions>
-              <configuration>
-                <properties>
-                  <property>
-                    <name>javax.xml.accessExternalSchema</name>
-                    <value>file,http</value>
-                  </property>
-                </properties>
-              </configuration>
-            </plugin>-->
-      <!--      <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>xml-maven-plugin</artifactId>
-              <executions>
-                <execution>
-                  <goals>
-                    <goal>validate</goal>
-                  </goals>
-                </execution>
-              </executions>
-              <configuration>
-                <validationSets>
-                  <validationSet>
-                    <dir>src/main/xml</dir>
-
-                    <systemId>src/main/xsd/scxml.xsd</systemId>
-                    <systemId>src/main/xsd/scxml-module-core.xsd</systemId>
-
-                  </validationSet>
-                </validationSets>
-              </configuration>
-            </plugin>-->
-      <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
         <version>0.14.0</version>
         <configuration>
-          <!--<schemaDirectory>src/main/xsd</schemaDirectory>-->
-          <!--<bindingDirectory>src/main/xjb</bindingDirectory>-->
-          <!--<schemaIncludes>-->
-          <!--<schemaInclude>scxml.xsd</schemaInclude>-->
-          <!--</schemaIncludes>-->
         </configuration>
         <executions>
           <execution>
