@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <!-- A wrapper state that contains all other states in this file
-- it represents the complete state machine --> 
+- it represents the complete state machine -->
 <scxml xmlns="http://www.w3.org/2005/07/scxml"
        xmlns:xi="http://www.w3.org/2001/XInclude"
        version="1.0"
@@ -18,7 +18,7 @@
         <transition target="Test1Sub1"/>
       </initial>
       <!-- Runs before we go into the substate -->
-      <onentry> 
+      <onentry>
         <log expr="'Inside Test1'"/>
       </onentry>
 
@@ -34,8 +34,8 @@
         <transition event="Event1" target="Test1Sub2"/>
       </state>
 
-      <!-- Here is the second substate 
-      It is final, so Test1 is done when we get here -->
+      <!-- Here is the second substate
+           It is final, so Test1 is done when we get here -->
       <final id="Test1Sub2"/>
 
       <!-- We get this event when we reach Test1Sub2. -->
@@ -52,14 +52,14 @@
         <transition target="Test2Sub1"/>
       </initial>
 
-      <!-- This time we reference a state 
-      defined in an external file.   -->
+      <!-- This time we reference a state
+           defined in an external file.   -->
       <xi:include href="SCXMLExamples/Test2Sub1.xml" parse="text"/>
-  
+
       <final id="Test2Sub2"/>
 
       <!-- Test2Sub2 is defined as final, so this
-      event is generated when we reach it -->
+           event is generated when we reach it -->
       <transition event="done.state.Test2" next="Test3"/>
     </state>
 
@@ -72,10 +72,10 @@
         <onentry>
           <log expr="'Inside Test3Sub1...'"/>
           <!-- Send our self an event in 5s -->
-          <send event="Timer"  delay="5s"/>
+          <send event="Timer" delay="5s"/>
         </onentry>
         <!-- Transition on to Test4.
-        This will exit both us and our parent. -->
+             This will exit both us and our parent. -->
         <transition event="Timer" target="Test4"/>
         <onexit>
           <log expr="'Leaving Test3Sub1...'"/>
@@ -86,7 +86,7 @@
         <log expr="'Leaving Test3...'"/>
       </onexit>
     </state>
-    
+
     <state id="Test4">
       <onentry>
         <log expr="'Inside Test4...'"/>
@@ -100,12 +100,12 @@
           <log expr="'Leaving Test4Sub1...'"/>
         </onexit>
         <!-- This transition causes the state to exit immediately
-        after entering Test4Sub1.  The transition has no event
-        or guard so it is always active -->
+             after entering Test4Sub1.  The transition has no event
+             or guard so it is always active -->
         <transition target="Test5"/>
       </state>
     </state>
-       
+
     <state id="Test5">
       <onentry>
         <log expr="'Inside Test5...'"/>
@@ -134,14 +134,14 @@
       <transition event="done.state.Test5P" target="Test6"/>
     </state>
 
-    <!-- 
+    <!--
          - This state shows invocation of an external component.
-         - We will use CCXML + VoiceXML actions as an example 
-         - as it is a good smoke test to show how it all 
-         - fits together. 
-         - Note: In a real app you would likely 
-         - split this over several states but we 
-         - are trying to keep it simple here. 
+         - We will use CCXML + VoiceXML actions as an example
+         - as it is a good smoke test to show how it all
+         - fits together.
+         - Note: In a real app you would likely
+         - split this over several states but we
+         - are trying to keep it simple here.
     -->
     <state id="Test6"
            xmlns:ccxml="http://www.w3.org/2002/09/ccxml"
@@ -156,40 +156,42 @@
 
       <onentry>
         <!-- Use <send> a message to a CCXML Processor asking it to run createcall -->
-        <send target="ccxmlid" type="http://www.w3.org/TR/scxml/#BasicHTTPEventProcessor" event="ccxml:createcall" namelist="dest"/>
+        <send target="ccxmlid" type="http://www.w3.org/TR/scxml/#BasicHTTPEventProcessor" event="ccxml:createcall"
+              namelist="dest"/>
       </onentry>
 
-      <transition event="ccxml:connection.connected">      
-        <!-- Here as a platform-specific extension we use example V3 
-        Custom Action Elements instead of send. The implementation of this logic 
-        would be platform-dependent. -->
+      <transition event="ccxml:connection.connected">
+        <!-- Here as a platform-specific extension we use example V3
+             Custom Action Elements instead of send. The implementation of this logic
+             would be platform-dependent. -->
         <v3:form id="HelloWorld">
           <v3:block>
             <v3:prompt>Hello World!</v3:prompt>
-          </v3:block>          
+          </v3:block>
         </v3:form>
       </transition>
 
       <transition event="v3:HelloWorld.done">
-        <!-- Here we are using the low level <send> 
-        element to run a v3 form. Note that the event "v3:HelloWorld.done" 
-        is assumed either to be set/sent explicitly by the v3:form code or 
-        implicitly by some process outside of the v3:form -->
-        <send target="v3id" type="http://www.w3.org/TR/scxml/#BasicEventProcessor" event="v3:formstart" namelist="src id"/>
+        <!-- Here we are using the low level <send>
+             element to run a v3 form. Note that the event "v3:HelloWorld.done"
+             is assumed either to be set/sent explicitly by the v3:form code or
+             implicitly by some process outside of the v3:form -->
+        <send target="v3id" type="http://www.w3.org/TR/scxml/#BasicEventProcessor" event="v3:formstart"
+              namelist="src id"/>
       </transition>
 
       <transition event="v3:HelloWorld2.done">
         <!-- we use _event.data to access data in the event we're processing.
-        Again we assume the v3:HelloWorld2.done is set/sent from outside
-        this document -->
-        <ccxml:disconnect connectionid="_event.data.connectionid"/>      
+             Again we assume the v3:HelloWorld2.done is set/sent from outside
+             this document -->
+        <ccxml:disconnect connectionid="_event.data.connectionid"/>
       </transition>
 
       <transition event="ccxml:connection.disconnected" target="Done"/>
-  
+
       <transition event="send.failed" target="Done">
-        <!-- If we get an error event we move to the Done state that 
-        is a final state. -->
+        <!-- If we get an error event we move to the Done state that
+             is a final state. -->
         <log expr="'Sending to and External component failed'"/>
       </transition>
 
@@ -199,7 +201,7 @@
     </state>
 
     <!-- This final state is an immediate child of Main
-    -  when we get here, Main.done is generated. -->
+         -  when we get here, Main.done is generated. -->
     <final id="Done"/>
     <!-- End of Main > -->
   </state>

@@ -1,6 +1,3 @@
-<!-- This is an example substate defined in
- - an external file and included by Main.scxml.
- -->
 <state id="Test2Sub1">
   <onentry>
     <log expr="'Inside Test2Sub1'"/>
