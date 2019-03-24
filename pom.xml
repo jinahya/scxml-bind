@@ -14,7 +14,7 @@
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
-  <url>http://jinahya.github.io/${project.artifactId}/sites/${project.version}</url>
+  <url>https://github.com/jinahya/${project.artifactId}</url>
   <inceptionYear>2014</inceptionYear>
   <organization/>
   <licenses>
@@ -33,18 +33,15 @@
       <email>jinahya@gmail.com</email>
     </developer>
   </developers>
-  <contributors/>
-
-  <mailingLists/>
 
   <prerequisites>
-    <maven>3.0.1</maven>
+    <maven>3.0.5</maven>
   </prerequisites>
 
   <scm>
-    <connection>scm:git:git@github.com:jinahya/scxml-bind.git</connection>
-    <developerConnection>scm:git:git@github.com:jinahya/scxml-bind.git</developerConnection>
-    <url>https://github.com/jinahya/scxml-bind</url>
+    <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/jinahya/${project.artifactId}</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
@@ -81,7 +78,7 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.13</version>
-      <scope>provided</scope>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>
@@ -91,17 +88,9 @@
     </dependency>
   </dependencies>
 
-  <repositories/>
-  <pluginRepositories/>
-
   <build>
     <pluginManagement>
       <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>1.8</version>
-        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -115,7 +104,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.5</version>
+          <version>3.0.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -125,7 +114,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>2.8.1</version>
+          <version>2.9</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -145,17 +134,17 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>animal-sniffer-maven-plugin</artifactId>
-          <version>1.13</version>
+          <version>1.17</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.1</version>
+          <version>2.7</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>xml-maven-plugin</artifactId>
-          <version>1.0</version>
+          <version>1.0.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -163,41 +152,42 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
         <executions>
           <execution>
             <id>download-xsds</id>
-            <phase>generate-resources</phase>
+            <phase>generate-sources</phase>
             <goals>
               <goal>run</goal>
             </goals>
             <configuration>
               <target>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml.xsd"
-                     dest="${project.basedir}/src/main/xsd/"
-                     verbose="false"
-                     usetimestamp="true"/>
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-core.xsd"
-                     dest="${project.basedir}/src/main/xsd/"
-                     verbose="false"
-                     usetimestamp="true"/>
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-data.xsd"
-                     dest="${project.basedir}/src/main/xsd/"
-                     verbose="false"
-                     usetimestamp="true"/>
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-external.xsd"
-                     dest="${project.basedir}/src/main/xsd/"
-                     verbose="false"
-                     usetimestamp="true"/>
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-datatypes.xsd"
-                     dest="${project.basedir}/src/main/xsd/"
+                     dest="${project.basedir}/src/main/resources"
                      verbose="true"
                      usetimestamp="true"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-attribs.xsd"
-                     dest="${project.basedir}/src/main/xsd/"
+                     dest="${project.basedir}/src/main/resources"
                      verbose="true"
                      usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-contentmodels.xsd"
-                     dest="${project.basedir}/src/main/xsd/"
+                     dest="${project.basedir}/src/main/resources"
                      verbose="true"
                      usetimestamp="false"/>
               </target>
@@ -225,9 +215,14 @@
   <reporting>
     <plugins>
       <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>3.1.11</version>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>2.5</version>
+        <version>3.0.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -237,7 +232,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.8.1</version>
+        <version>3.0.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -246,22 +241,11 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.5</version>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>cobertura-maven-plugin</artifactId>
-        <version>2.7</version>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.3</version>
+        <version>3.7</version>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.2</version>
         <reportSets>
           <reportSet>
             <reports>

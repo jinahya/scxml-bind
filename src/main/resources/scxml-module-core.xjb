@@ -4,31 +4,31 @@
   <jaxb:bindings schemaLocation="scxml-module-core.xsd" node="/xs:schema">
     <jaxb:bindings
         node="//xs:group[@name='scxml.initial.content']//xs:group[@ref='scxml.extra.content' and position()=1]">
-      <jaxb:property name="extra1"/>
+      <jaxb:property name="scxmlExtraContent1"/>
     </jaxb:bindings>
     <jaxb:bindings
         node="//xs:group[@name='scxml.initial.content']//xs:group[@ref='scxml.extra.content' and position()=2]">
-      <jaxb:property name="extra2"/>
+      <jaxb:property name="scxmlExtraContent2"/>
     </jaxb:bindings>
     <jaxb:bindings
         node="//xs:group[@name='scxml.history.content']//xs:group[@ref='scxml.extra.content' and position()=1]">
-      <jaxb:property name="extra1"/>
+      <jaxb:property name="scxmlExtraContent1"/>
     </jaxb:bindings>
     <jaxb:bindings
         node="//xs:group[@name='scxml.history.content']//xs:group[@ref='scxml.extra.content' and position()=2]">
-      <jaxb:property name="extra2"/>
+      <jaxb:property name="scxmlExtraContent2"/>
     </jaxb:bindings>
     <jaxb:bindings
         node="//xs:group[@name='scxml.if.content']//xs:group[@ref='scxml.core.executablecontent']">
-      <jaxb:property name="executablecontents1"/>
+      <jaxb:property name="scxmlCoreExtraContent1"/>
     </jaxb:bindings>
     <jaxb:bindings
         node="//xs:group[@name='scxml.if.elseif.mix']//xs:group[@ref='scxml.core.executablecontent']">
-      <jaxb:property name="executablecontents2"/>
+      <jaxb:property name="scxmlCoreExtraContent2"/>
     </jaxb:bindings>
     <jaxb:bindings
         node="//xs:group[@name='scxml.if.else.mix']//xs:group[@ref='scxml.core.executablecontent']">
-      <jaxb:property name="executablecontents3"/>
+      <jaxb:property name="scxmlCoreExtraContent3"/>
     </jaxb:bindings>
   </jaxb:bindings>
 </jaxb:bindings>
