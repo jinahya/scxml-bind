@@ -69,7 +69,7 @@
     </xsd:annotation>
   </xsd:include>
 
-  <!-- the various elements of executable content are defined in the relevant modules. 
+  <!-- the various elements of executable content are defined in the relevant modules.
   This gathers them up into a single type -->
   <xsd:group name="scxml.core.executablecontent">
     <xsd:choice>

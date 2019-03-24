@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <jaxb:bindings schemaLocation="scxml-module-core.xsd" node="/xs:schema">
+    <jaxb:bindings
+        node="//xs:group[@name='scxml.initial.content']//xs:group[@ref='scxml.extra.content' and position()=1]">
+      <jaxb:property name="extra1"/>
+    </jaxb:bindings>
+    <jaxb:bindings
+        node="//xs:group[@name='scxml.initial.content']//xs:group[@ref='scxml.extra.content' and position()=2]">
+      <jaxb:property name="extra2"/>
+    </jaxb:bindings>
+    <jaxb:bindings
+        node="//xs:group[@name='scxml.history.content']//xs:group[@ref='scxml.extra.content' and position()=1]">
+      <jaxb:property name="extra1"/>
+    </jaxb:bindings>
+    <jaxb:bindings
+        node="//xs:group[@name='scxml.history.content']//xs:group[@ref='scxml.extra.content' and position()=2]">
+      <jaxb:property name="extra2"/>
+    </jaxb:bindings>
+    <jaxb:bindings
+        node="//xs:group[@name='scxml.if.content']//xs:group[@ref='scxml.core.executablecontent']">
+      <jaxb:property name="executablecontents1"/>
+    </jaxb:bindings>
+    <jaxb:bindings
+        node="//xs:group[@name='scxml.if.elseif.mix']//xs:group[@ref='scxml.core.executablecontent']">
+      <jaxb:property name="executablecontents2"/>
+    </jaxb:bindings>
+    <jaxb:bindings
+        node="//xs:group[@name='scxml.if.else.mix']//xs:group[@ref='scxml.core.executablecontent']">
+      <jaxb:property name="executablecontents3"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+</jaxb:bindings>

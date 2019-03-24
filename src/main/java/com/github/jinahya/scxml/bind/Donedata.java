@@ -15,8 +15,8 @@
  */
 package com.github.jinahya.scxml.bind;
 
-import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
+import java.util.List;
 
 public class Donedata {
 
@@ -25,5 +25,4 @@ public class Donedata {
 
     @XmlElement(name = "param")
     protected List<Param> params;
-
 }

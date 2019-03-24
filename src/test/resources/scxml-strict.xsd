@@ -52,7 +52,7 @@
       </xsd:documentation>
     </xsd:annotation>
   </xsd:include>
-	
+
   <xsd:include schemaLocation="scxml-data-strict.xsd">
     <xsd:annotation>
       <xsd:documentation>
@@ -64,22 +64,22 @@
   <xsd:include schemaLocation="scxml-external-strict.xsd">
     <xsd:annotation>
       <xsd:documentation>
-        This imports the external communications elements for SCXML. 
+        This imports the external communications elements for SCXML.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:include>
-	
+
   <!-- the various elements of executable content are defined in the relevant modules. 
   This gathers them up into a single type -->
   <xsd:group name="scxml.core.executablecontent">
     <xsd:choice>
-      <xsd:group ref="scxml.extra.content" minOccurs="0" maxOccurs="unbounded"/> 
-      <xsd:element ref="raise"/> 
-      <xsd:element ref="if"/> 
-      <xsd:element ref="foreach"/> 
+      <xsd:group ref="scxml.extra.content" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element ref="raise"/>
+      <xsd:element ref="if"/>
+      <xsd:element ref="foreach"/>
       <xsd:element ref="send"/>
       <xsd:element ref="script"/>
-      <xsd:element ref="assign"/> 
+      <xsd:element ref="assign"/>
       <xsd:element ref="log"/>
       <xsd:element ref="cancel"/>
     </xsd:choice>

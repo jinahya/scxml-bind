@@ -18,12 +18,11 @@ package com.github.jinahya.scxml.bind;
 import javax.xml.bind.annotation.XmlAttribute;
 
 /**
- *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 public class Elseif {
 
+    // -----------------------------------------------------------------------------------------------------------------
     @XmlAttribute(required = true)
     private String cond;
-
 }

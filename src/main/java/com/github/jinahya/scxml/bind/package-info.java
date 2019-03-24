@@ -18,10 +18,10 @@
         elementFormDefault = XmlNsForm.QUALIFIED,
         namespace = XmlConstants.SCXML_NS_URI,
         xmlns = {
-            @XmlNs(prefix = XMLConstants.DEFAULT_NS_PREFIX,
-                   namespaceURI = XmlConstants.SCXML_NS_URI),
-            @XmlNs(prefix = "xsi",
-                   namespaceURI = XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI)
+                @XmlNs(prefix = XMLConstants.DEFAULT_NS_PREFIX,
+                        namespaceURI = XmlConstants.SCXML_NS_URI),
+                @XmlNs(prefix = "xsi",
+                        namespaceURI = XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI)
         }
 )
 @XmlAccessorType(XmlAccessType.NONE)

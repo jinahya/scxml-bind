@@ -15,11 +15,11 @@
  */
 package com.github.jinahya.scxml.bind;
 
-import java.util.List;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 @XmlRootElement
 public class Script extends Executable {
@@ -30,5 +30,4 @@ public class Script extends Executable {
     @XmlMixed
     @XmlAnyElement(lax = true)
     protected List<Object> content;
-
 }

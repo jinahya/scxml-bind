@@ -15,13 +15,12 @@
  */
 package com.github.jinahya.scxml.bind;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 public class Onentry {
@@ -36,15 +35,14 @@ public class Onentry {
     }
 
     @XmlElements({
-        @XmlElement(name = "log", namespace = XmlConstants.SCXML_NS_URI, type = Log.class, required = false),
-        @XmlElement(name = "script", namespace = XmlConstants.SCXML_NS_URI, type = Script.class, required = false),
-        @XmlElement(name = "raise", namespace = XmlConstants.SCXML_NS_URI, type = Raise.class, required = false),
-        @XmlElement(name = "foreach", namespace = XmlConstants.SCXML_NS_URI, type = Foreach.class, required = false),
-        @XmlElement(name = "assign", namespace = XmlConstants.SCXML_NS_URI, type = Assign.class, required = false),
-        @XmlElement(name = "if", namespace = XmlConstants.SCXML_NS_URI, type = If.class, required = false),
-        @XmlElement(name = "cancel", namespace = XmlConstants.SCXML_NS_URI, type = Cancel.class, required = false),
-        @XmlElement(name = "send", namespace = XmlConstants.SCXML_NS_URI, type = Send.class, required = false)
+            @XmlElement(name = "log", namespace = XmlConstants.SCXML_NS_URI, type = Log.class, required = false),
+            @XmlElement(name = "script", namespace = XmlConstants.SCXML_NS_URI, type = Script.class, required = false),
+            @XmlElement(name = "raise", namespace = XmlConstants.SCXML_NS_URI, type = Raise.class, required = false),
+            @XmlElement(name = "foreach", namespace = XmlConstants.SCXML_NS_URI, type = Foreach.class, required = false),
+            @XmlElement(name = "assign", namespace = XmlConstants.SCXML_NS_URI, type = Assign.class, required = false),
+            @XmlElement(name = "if", namespace = XmlConstants.SCXML_NS_URI, type = If.class, required = false),
+            @XmlElement(name = "cancel", namespace = XmlConstants.SCXML_NS_URI, type = Cancel.class, required = false),
+            @XmlElement(name = "send", namespace = XmlConstants.SCXML_NS_URI, type = Send.class, required = false)
     })
     protected List<Executable> executables;
-
 }

@@ -45,5 +45,4 @@ public class History {
 
     @XmlElement(required = true)
     private Transition transition;
-
 }

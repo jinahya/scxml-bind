@@ -15,14 +15,13 @@
  */
 package com.github.jinahya.scxml.bind;
 
-import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 /**
- *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 @XmlRootElement
@@ -38,15 +37,14 @@ public class Foreach extends Executable {
     private String index;
 
     @XmlElements({
-        @XmlElement(name = "assign", namespace = "http://www.w3.org/2005/07/scxml", type = Assign.class, required = false),
-        @XmlElement(name = "cancel", namespace = "http://www.w3.org/2005/07/scxml", type = Cancel.class, required = false),
-        @XmlElement(name = "foreach", namespace = "http://www.w3.org/2005/07/scxml", type = Foreach.class, required = false),
-        @XmlElement(name = "if", namespace = "http://www.w3.org/2005/07/scxml", type = If.class, required = false),
-        @XmlElement(name = "log", namespace = "http://www.w3.org/2005/07/scxml", type = Log.class, required = false),
-        @XmlElement(name = "raise", namespace = "http://www.w3.org/2005/07/scxml", type = Raise.class, required = false),
-        @XmlElement(name = "script", namespace = "http://www.w3.org/2005/07/scxml", type = Script.class, required = false),
-        @XmlElement(name = "send", namespace = "http://www.w3.org/2005/07/scxml", type = Send.class, required = false)
+            @XmlElement(name = "assign", namespace = "http://www.w3.org/2005/07/scxml", type = Assign.class, required = false),
+            @XmlElement(name = "cancel", namespace = "http://www.w3.org/2005/07/scxml", type = Cancel.class, required = false),
+            @XmlElement(name = "foreach", namespace = "http://www.w3.org/2005/07/scxml", type = Foreach.class, required = false),
+            @XmlElement(name = "if", namespace = "http://www.w3.org/2005/07/scxml", type = If.class, required = false),
+            @XmlElement(name = "log", namespace = "http://www.w3.org/2005/07/scxml", type = Log.class, required = false),
+            @XmlElement(name = "raise", namespace = "http://www.w3.org/2005/07/scxml", type = Raise.class, required = false),
+            @XmlElement(name = "script", namespace = "http://www.w3.org/2005/07/scxml", type = Script.class, required = false),
+            @XmlElement(name = "send", namespace = "http://www.w3.org/2005/07/scxml", type = Send.class, required = false)
     })
     private List<Executable> executables;
-
 }

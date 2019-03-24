@@ -28,5 +28,4 @@ public class Cancel extends Executable {
 
     @XmlAttribute
     private String sendidexpr;
-
 }

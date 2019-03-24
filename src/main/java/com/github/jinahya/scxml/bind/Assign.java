@@ -19,7 +19,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 @XmlRootElement
@@ -30,5 +29,4 @@ public class Assign extends Executable {
 
     @XmlAttribute
     private String expr;
-
 }

@@ -16,7 +16,6 @@
 package com.github.jinahya.scxml.bind;
 
 /**
- *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 public class Else {

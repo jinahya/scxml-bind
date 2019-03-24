@@ -15,12 +15,12 @@
  */
 package com.github.jinahya.scxml.bind;
 
-import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.List;
 
 public class Final {
 
@@ -29,12 +29,11 @@ public class Final {
     @XmlSchemaType(name = "ID")
     private String id;
 
-//    @XmlElement(name = "onentry")
+    //    @XmlElement(name = "onentry")
 //    private List<Onentry> onentries;
     @XmlElement(name = "onexit")
     private List<Onexit> onexits;
 
     @XmlElement
     private Donedata donedata;
-
 }

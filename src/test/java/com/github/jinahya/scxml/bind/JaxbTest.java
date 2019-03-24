@@ -15,17 +15,17 @@
  */
 package com.github.jinahya.scxml.bind;
 
-import java.io.File;
-import java.io.IOException;
+import org.testng.annotations.Test;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.SchemaOutputResolver;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
-import org.testng.annotations.Test;
+import java.io.File;
+import java.io.IOException;
 
 /**
- *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 public class JaxbTest {
@@ -45,8 +45,6 @@ public class JaxbTest {
                 final File file = new File("target", "schema.xsd");
                 return new StreamResult(file);
             }
-
         });
     }
-
 }

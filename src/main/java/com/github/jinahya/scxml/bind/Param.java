@@ -32,5 +32,4 @@ public class Param {
 
     @XmlAttribute(name = "location")
     protected String location;
-
 }

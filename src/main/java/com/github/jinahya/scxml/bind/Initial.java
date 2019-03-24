@@ -15,15 +15,21 @@
  */
 package com.github.jinahya.scxml.bind;
 
+import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
+import java.util.List;
 
 /**
- *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
 public class Initial {
 
+    @XmlAnyElement(lax = true)
+    private List<Object> extraContentBeforeTransition;
+
     @XmlElement(required = true)
     private Transition transition;
 
+    @XmlAnyElement(lax = true)
+    private List<Object> extraContentAfterTransition;
 }

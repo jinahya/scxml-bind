@@ -15,10 +15,10 @@
  */
 package com.github.jinahya.scxml.bind;
 
-import java.util.List;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlMixed;
+import java.util.List;
 
 public class Content {
 
@@ -28,5 +28,4 @@ public class Content {
     @XmlAnyElement(lax = true)
     @XmlMixed
     protected List<Object> content;
-
 }
