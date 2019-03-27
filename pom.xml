@@ -156,7 +156,7 @@
         <executions>
           <execution>
             <id>download-xsds</id>
-            <phase>generate-sources</phase>
+            <!--<phase>generate-sources</phase>-->
             <goals>
               <goal>run</goal>
             </goals>
@@ -165,31 +165,31 @@
                 <get src="http://www.w3.org/2011/04/SCXML/scxml.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="true"/>
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-attribs.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="true"/>
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-contentmodels.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="true"/>
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-datatypes.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="true"/>
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-core.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="true"/>
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-data.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="true"/>
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-external.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="true"/>
+                     usetimestamp="false"/>
               </target>
             </configuration>
           </execution>
