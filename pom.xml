@@ -165,15 +165,15 @@
                 <get src="http://www.w3.org/2011/04/SCXML/scxml.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="false"/>
+                     usetimestamp="true"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-attribs.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="false"/>
+                     usetimestamp="true"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-contentmodels.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="false"/>
+                     usetimestamp="true"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-datatypes.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
@@ -181,15 +181,15 @@
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-core.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="false"/>
+                     usetimestamp="true"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-data.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="false"/>
+                     usetimestamp="true"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-external.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
-                     usetimestamp="false"/>
+                     usetimestamp="true"/>
               </target>
             </configuration>
           </execution>
