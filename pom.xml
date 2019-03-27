@@ -162,10 +162,6 @@
             </goals>
             <configuration>
               <target>
-                <get src="http://www.w3.org/2011/04/SCXML/scxml.xsd"
-                     dest="${project.basedir}/src/main/resources"
-                     verbose="true"
-                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-attribs.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
@@ -174,7 +170,23 @@
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
                      usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-copyright.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-datatypes.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-message.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-messages.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-module-anchor.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
                      usetimestamp="false"/>
@@ -187,6 +199,30 @@
                      verbose="true"
                      usetimestamp="false"/>
                 <get src="http://www.w3.org/2011/04/SCXML/scxml-module-external.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-module-script.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-profile-basic.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-profile-ecma.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-profile-minimum.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml-profile-xpath.xsd"
+                     dest="${project.basedir}/src/main/resources"
+                     verbose="true"
+                     usetimestamp="false"/>
+                <get src="http://www.w3.org/2011/04/SCXML/scxml.xsd"
                      dest="${project.basedir}/src/main/resources"
                      verbose="true"
                      usetimestamp="false"/>
@@ -206,6 +242,14 @@
             <goals>
               <goal>generate</goal>
             </goals>
+            <configuration>
+              <schemaExcludes>
+                <schemaExclude>scxml-module-script.xsd</schemaExclude>
+                <schemaExclude>scxml-profile-basic.xsd</schemaExclude>
+                <schemaExclude>scxml-profile-ecma.xsd</schemaExclude>
+                <schemaExclude>scxml-profile-xpath.xsd</schemaExclude>
+              </schemaExcludes>
+            </configuration>
           </execution>
         </executions>
       </plugin>
