@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.w3.org/2005/07/scxml https://www.w3.org/2011/04/SCXML/scxml.xsd"
+       version="1.0"
+       initial="loaded">
+  <state id="loaded">
+    <transition event="initXlet" target="paused"/>
+    <transition event="destroyXlet" target="destroyed"/>
+  </state>
+  <state id="paused">
+    <transition event="startXlet" target="active"/>
+    <transition event="destroyXlet" target="destroyed"/>
+  </state>
+  <state id="active">
+    <transition event="pauseXlet" target="paused"/>
+    <transition event="destroyXlet" target="destroyed"/>
+  </state>
+  <final id="destroyed">
+  </final>
+</scxml>
